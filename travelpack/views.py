@@ -1,0 +1,10 @@
+from django.shortcuts import render
+from .models import Destination
+# Create your views here.
+def index(request):
+    dests = Destination.objects.all()
+    
+    return render(request, 'travelpack/index.html', {'dests': dests})
+
+def contact(request):
+    return render(request, 'travelpack/contact.html')
